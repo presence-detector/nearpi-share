@@ -1,6 +1,6 @@
 const express = require('express');
 const http = require('http');
-const exec = require('child_process');
+const exec = require('child_process').exec;
 
 
 const app = express();
@@ -25,10 +25,16 @@ app.post('/share', (req, res) => {
     }
 
     console.log(macAddress)
-    try {
-        exec.execSync('./script.sh ' + macAddress);
-    } catch (error) {
-        console.log(error);
-    }
+    
+    //execute the command and console.log the output
+    exec('./script.sh ' + macAddress, (err, stdout, stderr) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        console.log(stdout);
+    });
+
+
     res.status(200).json({ message: 'OK', macAddress: macAddress });
 });
