@@ -27,7 +27,7 @@ app.post('/share', (req, res) => {
     console.log(macAddress)
     
     //execute the command and console.log the output
-    exec('./script.sh ' + macAddress, (err, stdout, stderr) => {
+    exec('ifconfig', (err, stdout, stderr) => {
         if (err) {
             console.error(err);
             return;
