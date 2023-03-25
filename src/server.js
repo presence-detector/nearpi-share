@@ -27,7 +27,7 @@ app.post('/share', (req, res) => {
     console.log(macAddress)
     
     //execute the command and console.log the output
-    exec('ifconfig', (err, stdout, stderr) => {
+    exec('./script.sh', (err, stdout, stderr) => {
         if (err) {
             console.error(err);
             res.status(500).json({ message: 'Internal Server Error' });
