@@ -30,6 +30,7 @@ app.post('/share', (req, res) => {
     exec('ifconfig', (err, stdout, stderr) => {
         if (err) {
             console.error(err);
+            res.status(500).json({ message: 'Internal Server Error' });
             return;
         }
         console.log(stdout);
