@@ -2,6 +2,11 @@
 
 Share the MAC Address from the master to the slaves
 
+## Technologies
+
+- Node.js
+- Express
+
 ## 🚀 Installation 
 
 1.  Clone the repository
@@ -9,11 +14,6 @@ Share the MAC Address from the master to the slaves
 ```bash
 git clone https://github.com/presence-detector/nearpi-share.git
 ```
-
-2. Technologies
-
-- Node.js
-- Express
 
 2.  Run express server
 
